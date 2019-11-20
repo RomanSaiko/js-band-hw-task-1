@@ -36,7 +36,7 @@ export default class Vehicles {
 
         this.transportList.appendChild(truckListItem);
 
-        localStorage.setItem('transport', JSON.stringify(this.transportList.innerHTML));
+        localStorage.setItem('transports', JSON.stringify(this.transportList.innerHTML));
     }
 
     addShip(e) {
@@ -64,14 +64,14 @@ export default class Vehicles {
 
         this.transportList.appendChild(shipListItem);
 
-        localStorage.setItem('transport', JSON.stringify(this.transportList.innerHTML));
+        localStorage.setItem('transports', JSON.stringify(this.transportList.innerHTML));
     }
 
     render() {
-        if (localStorage.getItem('transport') === null) {
+        if (localStorage.getItem('transports') === null) {
             this.transportList.innerHTML = '';
         } else {
-            const refreshedTransportList = localStorage.getItem('transport');
+            const refreshedTransportList = localStorage.getItem('transports');
             this.transportList.innerHTML =  JSON.parse(refreshedTransportList);
         }
     }

@@ -27,14 +27,14 @@ export default class Costs {
         `;
 
         this.costList.appendChild(costListItem);
-        localStorage.setItem('cost', JSON.stringify(this.costList.innerHTML));
+        localStorage.setItem('costs', JSON.stringify(this.costList.innerHTML));
     }
 
     render() {
-        if (localStorage.getItem('cost') === null) {
+        if (localStorage.getItem('costs') === null) {
             this.costList.innerHTML = '';
         } else {
-            const refreshedCostList = localStorage.getItem('cost');
+            const refreshedCostList = localStorage.getItem('costs');
             this.costList.innerHTML =  JSON.parse(refreshedCostList);
         }
     }
